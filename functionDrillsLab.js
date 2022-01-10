@@ -14,9 +14,11 @@
 //CODE HERE
 function helloWorld(){
   console.log('Hello world')
+
 }
 
 helloWorld();
+
 
 ////////////////// PROBLEM 2 ////////////////////
 
@@ -58,7 +60,11 @@ printName('Cameron');
 */
 
 //CODE HERE
+function greeting(person1){
+  console.log(`Hello, ${person1}`)
+}
 
+greeting('Jake');
 
 ////////////////// PROBLEM 5 ////////////////////
 
@@ -73,7 +79,18 @@ printName('Cameron');
 
 //CODE HERE
 
-
+let compareNums = (num1,num2) => {
+  
+  if (num1 > num2){
+    console.log(`${num1}`)
+  } else if(num1 < num2){
+    console.log(`${num2}`)
+  } else{
+    console.log(`${num1}`)
+  }
+}
+  compareNums(3, 2);
+  
 ////////////////// PROBLEM 6 ////////////////////
 /*
   Create a function called add that takes in two parameters 
@@ -83,7 +100,13 @@ printName('Cameron');
 */
 
 //CODE HERE
-
+ function add(num1, num2){
+   return parseInt(num1) + parseInt(num2)
+   
+  }
+  let sum = add('23', 3)
+  
+  console.log(sum)
 
 ////////////////// PROBLEM 7 ////////////////////
 
@@ -96,8 +119,7 @@ const exclaim = function(str) {
   return str.toUpperCase() + '!!!'
 }
 
-// arrow
-// declaration
+
 // expression
 
 
@@ -113,9 +135,9 @@ const exclaimTwo = str => {
   return str.toUpperCase() + '!!!'
 }
 
+
 // arrow
-// declaration
-// expression
+
 
 /*
   Rewrite exclaimTwo to be a single line.
