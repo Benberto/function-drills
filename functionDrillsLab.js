@@ -131,9 +131,9 @@ const exclaim = function(str) {
   Uncomment the answer underneath.
 */
 
-const exclaimTwo = str => {
-  return str.toUpperCase() + '!!!'
-}
+const exclaimThree = str => `${str.toUpperCase()}!!!`;
+
+console.log(exclaimThree("howdy"))
 
 
 // arrow
@@ -159,9 +159,9 @@ function exclaimFour(str) {
   return str.toUpperCase() + '!!!'
 }
 
-// arrow
+
 // declaration
-// expression
+
 
 
 ////////////////// PROBLEM 10 ////////////////////
@@ -175,6 +175,20 @@ function exclaimFour(str) {
 
 //CODE HERE
 
+function nameCheck(name){
+  // name = name.toLowerCase()
+
+  if(name.toLowerCase() === 'Steven'.toLowerCase()){
+    return `What is up Steven?`
+
+  }else if(name.toLowerCase() === 'Bryan'.toLowerCase()){
+    return `Hey Bryan!`
+  } else {
+    return `Cool name ${name}` 
+  }
+}
+const nameGreeting = nameCheck('steven')
+console.log(nameGreeting)
 
 ////////////////// PROBLEM 11 ////////////////////
 /*
@@ -188,6 +202,24 @@ function exclaimFour(str) {
 
 //CODE HERE
 
+function faveColorFinder(color){
+  
+  if(color.toLowerCase() === 'Red'.toLowerCase){
+    return 'Red is a great color'
+    
+  }else if(color.toLowerCase() === 'Green'.toLowerCase()){
+    return 'Green is a solid favorite color'
+  } 
+  else if(color.toLowerCase() === 'Black'.toLowerCase()){
+    return 'so trendy'
+  }
+  else{
+    return 'you need to evaluate your favorite color choice' 
+  }
+}
+
+let colorRating = faveColorFinder('black')
+console.log(colorRating)
 
 ////////////////// PROBLEM 12 ////////////////////
 let namesArr = ['Cameron', 'Riley', 'Eric', 'Brenna', 'Karl']
@@ -198,7 +230,13 @@ let namesArr = ['Cameron', 'Riley', 'Eric', 'Brenna', 'Karl']
 */
 
 //CODE HERE
+function printAllNames(){
+  for(let i=0; i < namesArr.length;i++){
+console.log(namesArr[i])
+  }
+}
 
+printAllNames();
 
 ////////////////// PROBLEM 13 ////////////////////
 /*
@@ -209,8 +247,16 @@ let namesArr = ['Cameron', 'Riley', 'Eric', 'Brenna', 'Karl']
 */
 
 //CODE HERE
+function thatsOdd(number){
+  if(number %2 === 0){
+    return "That's not odd!"
+  } else{
+    return "That is odd indeed!"
+  }
 
-
+}
+oddChecker = thatsOdd('309')
+console.log(oddChecker)
 ////////////////// PROBLEM 14 ////////////////////
 
 /*
@@ -222,7 +268,8 @@ let namesArr = ['Cameron', 'Riley', 'Eric', 'Brenna', 'Karl']
 */
 
 //CODE HERE
-
+const bestMovie = mov => `${mov} is the best movie ever!`;
+console.log(bestMovie("Fantastic Beasts"))
 
 ////////////////// PROBLEM 15 ////////////////////
 let bigOrSmallArray = [1,101, 102, 2, 103, 4, 5, 6, 107]
@@ -236,7 +283,21 @@ let bigOrSmallArray = [1,101, 102, 2, 103, 4, 5, 6, 107]
 */
 
 //CODE HERE
+function bigOrSmall(arr){
+  let answers = []
+  for(let i = 0; i < arr.length; i++){
+    if(arr[i] > 100){
+    answers.push('big')
+    
+  } else {
+    answers.push('small') 
+  }
+  }
+  return answers 
+}
 
+let arrayEvaluator = bigOrSmall(bigOrSmallArray)
+console.log(arrayEvaluator)
 
 ////////////////// PROBLEM 16 ////////////////////
 let contestants = ['Katniss', 'Peeta', 'Fox-face', 'Glimmer', 'Cato', 'Rue', 'Thresh', 'Clove', 'Marvel']
@@ -247,10 +308,22 @@ let loser = 'Glimmer'
 */
 
 //CODE HERE
+function theEliminator(arr,variable){
+  for(let i=0; i < arr.length;i++){
+    if(arr[i] === loser){
+      arr.splice(i,1)
+      i--
+    }
+  }
+return arr
+}
 
+let updatedContestants = theEliminator(contestants,loser)
+console.log(updatedContestants)
 
 ////////////////// PROBLEM 17 ////////////////////
 let sampleString = "Hi, my name is Kylo."
+
 /*
   Write a function that takes in one argument, a string. The function should then console.log that string, in entirely uppercase characters.
   Invoke the function, passing in the sampleString (above).
