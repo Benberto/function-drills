@@ -322,16 +322,21 @@ let updatedContestants = theEliminator(contestants,loser)
 console.log(updatedContestants)
 
 ////////////////// PROBLEM 17 ////////////////////
-let sampleString = "Hi, my name is Kylo."
 
 /*
-  Write a function that takes in one argument, a string. The function should then console.log that string, in entirely uppercase characters.
-  Invoke the function, passing in the sampleString (above).
+Write a function that takes in one argument, a string. The function should then console.log that string, in entirely uppercase characters.
+Invoke the function, passing in the sampleString (above).
 */
 
 //CODE HERE
+let sampleString = "Hi, my name is Kylo."
 
+function makeUppercase(str){
+  console.log(str.toUpperCase())
 
+}
+
+makeUppercase(sampleString)
 ////////////////// PROBLEM 18 ////////////////////
 /*
   Write a function called emailCheck that takes in
@@ -343,6 +348,19 @@ let sampleString = "Hi, my name is Kylo."
   return 'must provide a valid email address'
 */
 
+// CODE HERE
+function emailCheck(email){
+  email = String(email).trim()
+
+  if(email.includes('@')){
+    return 'email verified'
+  } else {
+   return 'Must provide a valid email address'
+  }
+}
+
+console.log(emailCheck(`car@car.com`))
+
 ////////////////// PROBLEM 19 ////////////////////
 /*
   Write a function, naming it whatever you believe to be appropriate, that buys as many chocolate frogs as possible with a certain amount of gold. Each chocolate frog costs 3 gold. Your function should take in a single parameter, which is the amount of gold you are willing to spend. Your function should return a total amount of chocolate frogs you were able to purchase.
@@ -350,16 +368,28 @@ let sampleString = "Hi, my name is Kylo."
 */
 
 //CODE HERE
-
-
+function frogsPurchased(gold){
+  return gold / 3
+}
+let totalFrogs = frogsPurchased(96)
+console.log(totalFrogs)
 ////////////////// PROBLEM 20 ////////////////////
 /*
   You might have noticed a slight bug in the previous problem. If you were to pass in 4 gold, the function would return to you 1.3333... However, you can't really go to a store and by 1.333 products. You would just be able to purchase 1 product. Re-write the function you used in the previous problem (give it the same name, just add a 2 to the end of it) that fixes this bug. Invoke the function and store the returned value to a variable called `totalFrogs2`.
 */
 
 //CODE HERE
-
-
+function frogsPurchased2(gold){
+  if(gold %3 === 0){
+    return gold / 3
+  } else if((gold - 1) % 3 === 0){
+    return gold - 1
+  } else {
+    return (gold - 2) / 3
+  }
+}
+let totalFrogs2 = frogsPurchased2(100)
+console.log(totalFrogs2)
 ////////////////// PROBLEM 21 ////////////////////
 let sampleArray = [0,1,2,3,4,7,5,6,8,9]
 /*
@@ -367,8 +397,20 @@ let sampleArray = [0,1,2,3,4,7,5,6,8,9]
 */
 
 //CODE HERE
+function checkArrayAscending(arr){
+  let comparisonValue = arr[0]
+  for(let i = 1; i < arr.length - 1; i++){
+  if(arr[i]<= comparisonValue){
+    return false
+  } else{
+    comparisonValue = arr[i]
+  }
+}
+return true
 
-
+}
+let arrayIsAscending = checkArrayAscending(sampleArray)
+console.log(arrayIsAscending)
 ////////////////// PROBLEM 22 ////////////////////
 
 let duck = "cute";
@@ -391,13 +433,13 @@ function pond() {
 */
 
 //This array should contain the variable names (as strings) accessible in the global scope.
-let globalScope = []
+let globalScope = ["duck"]
 
 //This array should contain the variable names (as strings) accessible in the bathroom function.
-let bathroomScope = []
+let bathroomScope = ["duck", "rubberDuck"]
 
 //This array should contain the variable names (as strings) accessible in the bathtub function.
-let bathtubScope = []
+let bathtubScope = ["duck", "sailerDuck", "rubberDuck"]
 
 //This array should contain the variable names (as strings) accessible in the pond function.
-let pondScope = []
+let pondScope = ["duck", "realDuck"]
